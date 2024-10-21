@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+      function f1(callback) {
+  console.log("Step 1: Function f1 executed");
+  callback();
+}
+
+function f2(callback) {
+  console.log("Step 2: Function f2 executed");
+  callback();
+}
+
+function f3(callback) {
+  console.log("Step 3: Function f3 executed");
+  callback();
+}
+
+// Using callbacks to ensure synchronous-like flow
+f1(() => {
+  f3(() => {
+      f2();
+  });
+});
+    </script>
+</body>
+
+</html>

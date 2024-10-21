@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // class Student{
+            
+        //         name="leo";
+        //         age=34;
+        //         display(){
+        //             console.log(this.name)
+        //         }
+        //     }
+        //     students=new Student()
+        //     console.log(students)
+        // students.display()
+        class Product{
+            static count=0
+            constructor(name,category,price){
+                this.name=name;
+                this.category=category;
+                this.price=price;
+                Product.count=Product.count+1
+
+            }
+            display_product(){
+                console.log("name",this.name);
+                console.log("category",this.category);
+                console.log("price",this.price);
+            }
+            product_count(){
+                console.log("total number of products:"  + Product.count);
+            }
+        }
+        product1=new Product("car","toy",100)
+        product2=new Product("gun","toy",60)
+        product1.display_product()
+        product1.product_count()
+
+    </script>
+</body>
+</html>

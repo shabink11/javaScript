@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 300px;
+            border: solid 5px red;
+        }
+        .hide{
+            visibility: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+    <h1>rohan</h1>
+</div>
+    </div>
+    <button id="btn">click me</button>
+    
+
+    <script>
+        const box=document.querySelector(".box")
+        const btn=document.getElementById("btn")
+        btn.onclick=function(){
+            box.firstElementChild.classList.toggle("hide")
+            
+       
+        }
+        </script>
+</body>
+</html>

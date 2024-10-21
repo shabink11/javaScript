@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="regform">
+        <label for="name">name:</label>
+        <input id="tex" type="text" name="name">
+        <label for="age">Age :</label>
+        <input id="num" type="number">
+        <button id="sub">submit</button>
+    </form>
+    <table id="table">
+        <tr>SLNO</tr>
+        <TR>NAME</TR>
+    </table>
+    <!-- form -->
+    <script>
+        const name=document.getElementById("tex")
+        const ageinput=document.getElementById("num")
+        const submitbutton=document.getElementById("sub")
+        submitbutton.onclick=function(){
+         
+
+
+            const table=document.getElementById("table")
+        }
+        const regform=document.getElementById("regform")
+        const formdataarray=JSON.parse(localStorage,getItem("formdata")) || []
+
+        regform.onSubmit=function(event){
+            event.preventDefault()
+            const formdata=new formData(event.target)
+            const formObject={}
+            formdata.forEach((value,key)=>{
+                formObject[key]=value
+            
+            })
+            console.log(formObject)
+            formdataarray.push(formObject)
+            localStorage.setItem("formdata",JSON.stringify("fordataarray"))
+
+        }
+        function displaytable(){
+            formdataarray.forEach((item,index)) =>{
+                const tablerow=document.createElement("tr")
+                const cell1=document.
+
+
+            }
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+<script>
+    function f1() {
+        return "Step 1: Function f1 executed";
+    }
+
+    function f2() {
+        // Simulate a blocking operation with a loop
+        for (let i = 0; i < 1e9; i++) { } // This loop will block the execution for a while
+        return "Step 2: Function f2 executed";
+    }
+
+    function f3() {
+        return "Step 3: Function f3 executed";
+    }
+</script>
+
+</html>

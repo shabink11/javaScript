@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+    <label for="name">name</label>
+    <input id="name" type="text">
+    <label for="age">age</label>
+    <input id="age" type="number">
+    <button id="sub">submit</button>
+</form>
+   
+    <script>
+         const first=document.getElementById("name")
+         const Second=document.getElementById("age")
+        const submitButton=document.getElementById("sub")
+        submitButton.onclick=function(event){
+            event.preventDefault()
+            console.log("name",first.value)
+            console.log("age",Second.value)
+        }
+        
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun1() {
+  return "hello";
+}
+
+function fun2(success) {
+  return new Promise(function(resolve, reject) {
+    setTimeout(() => {
+      if (success) {
+        resolve("hiiiii");
+      } else {
+        reject("An error occurred");
+      }
+    }, 1000);
+  });
+}
+
+function fun3() {
+  return "hiiiii";
+}
+
+// Testing the functions
+console.log(fun1()); // Outputs: "hello"
+
+// fun2(true)
+//   .then((message) => {
+//     console.log(message); // Outputs: "hiiiii" if success is true
+//   })
+//   .catch((error) => {
+//     console.error("error"); // Won't output anything if success is true
+//   });
+
+fun2(false)
+  .then((message) => {
+    console.log(message); // Won't output anything if success is false
+  })
+  .catch((error) => {
+    console.error(error); // Outputs: "An error occurred" if success is false
+  });
+
+console.log(fun3()); // Outputs: "hiiiii"
+    </script>
+</body>
+</html>

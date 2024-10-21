@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="regform">
+        <label for="name">first name:</label>
+        <input type="text" id="new" name="name">
+        <label for="age">Age:</label>
+        <input type="number" id="class" name="age">
+        <input type="submit" id="newclass">
+    </form>
+    <table >
+        <thead>
+            <tr> 
+                <th>serial Number</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="table">
+    
+        </tbody>
+      
+    </table>
+    <script>
+        const mainInput=document.getElementById("new")
+        const ageInput=document.getElementById("class")
+        const submitButton=document.getElementById("newclass")
+        const table=document.getElementById("table")
+    
+        submitButton.onclick=function(){
+            console.log("name",mainInput.value)
+            console.log("age",ageInput.value)
+        }
+        const regForm=document.getElementById("regform")
+        const formDataarray=JSON.parse(localStorage.getItem("formdata")) || []
+        displaytable()
+    
+        regForm.onsubmit=function(event){
+            event.preventDefault()
+            const formData=new FormData(event.target)
+            const formObject={}
+            formData.forEach((value,key)=>{ 
+                formObject[key]=value
+             })
+            console.log(formObject)
+            formDataarray.push(formObject)        
+            
+            localStorage.setItem("formdata",JSON.stringify(formDataarray))
+            displaytable()
+    
+        }
+        function displaytable(){
+            table.innerHTML=""
+            formDataarray.forEach((item,index)=>{
+                const tableRow=document.createElement("tr")
+                const cell1=document.createElement("td")
+                const cell2=document.createElement("td")
+                const cell3=document.createElement("td")
+                cell1.textContent=index+1
+                cell2.textContent=item.name
+                cell3.textContent=item.age
+                tableRow.appendChild(cell1)
+                tableRow.appendChild(cell2)
+                tableRow.appendChild(cell3)
+                table.appendChild(tableRow)
+            })
+            
+        }
+    
+    
+    </script>
+</body>
+</html>
+

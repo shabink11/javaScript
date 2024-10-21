@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="slider_style.css">
+    <style>
+        img{
+            float: left;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul id="lightslider" class="gallery">
+        <li data-thumb="img/thumb/1.jpj">
+            <a href="#"><img src="/css/imgs/baabtra1.png" alt=""></a>
+
+        </li>
+
+        <li data-thumb="img/thumb/3.jpg">
+            <a href="#"><img src="/css/imgs/flutter.png" alt=""></a>
+        </li>
+        <li data-thumb="img/thumb/3.jpg">
+            <a href="#"><img src="/css/imgs/php.png" alt=""></a>
+
+        </li>
+        
+    </ul>
+    <script>
+        $(document).ready(function(){
+            $('#lightSlider').lightSlider({
+                item: 1,
+                slideMove: 1,
+                slideMargine: 10,
+                mode: "slide",
+                useCSS: true,
+                speed: 2000,
+                auto: true,
+                pause: 4500,
+                loop: true,
+                controls: true,
+                keyPress:true,
+                pager: true,
+                gallery: false,
+                thumbMargine: 3,
+                currentPagerPosition:'middle',
+                enableDrag:true,
+                swipeThreshold:40,
+                responsive:[],
+                onBeforeStart:function($el){},
+                onSliderLoad:function($el){},
+                onBeforeSlide:function($el,scene){},
+                onAfterSlide: function($el,scene){},
+                onBeforeNextSlide: function($el,scene){},
+                onBeforePrevSlide: function($el,scene){}
+            })
+        })
+    </script>
+
+</body>
+
+</html>

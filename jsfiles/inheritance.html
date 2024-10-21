@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Category{
+            constructor(category){
+                this.category=category
+            }
+            display_category(){
+               return this.category;
+            }
+
+        }
+        class Product extends Category {
+            static count=0;
+            constructor(name,category,price){
+                super(category)
+                this.name=name;
+               
+                this.price=price;
+                Product.count=Product.count+1
+            }
+            display_product(){
+                console.log("name",this.name);
+                console.log ("category",display_category());
+                console.log("price",this.price);
+            }
+            display_count(){
+                console.log("total"+Product.count)
+            }
+            
+        }
+    </script>
+</body>
+</html>

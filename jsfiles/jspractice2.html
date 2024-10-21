@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent">
+        <h1 class="heading">welcome</h1>
+        <p id="para">kjfhhdjdhffhudhdjdidfnvnvdnfuenrbnvbksbfsnbfkrnv</p>
+    </div>
+    <button id="btn1">add</button>
+    <button id="btn2">remove</button>
+    
+    <script>
+        const parentDiv=document.getElementById("parent")
+        const addButton=document.getElementById("btn1")
+        const removeButton=document.getElementById("btn2")
+     addButton.onclick=function (){
+            const newElement=document.createElement("p") 
+            newElement.textContent="tyfrufrfvbyugtfrftbhbv"
+            parentDiv.appendChild(newElement)
+                       
+     }
+     removeButton.onclick=function(){
+        const firstElement=parentDiv.firstElementChild
+        parentDiv.removeChild(firstElement)
+     }
+     
+        
+
+     
+    </script>
+</body>
+</html>

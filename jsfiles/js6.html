@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis odio expedita magnam consectetur! Magnam
+            blanditiis, sunt beatae aut adipisci ducimus? Delectus dolore eaque temporibus voluptates accusamus
+            officiis, assumenda saepe porro!</p>
+        <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis est ab ratione iure. Facilis eum iure
+            saepe? Cumque aperiam saepe quod facere! Aperiam ea suscipit minus culpa quibusdam. Deserunt, placeat?</p>
+    </div>
+    <ul id="list">
+        <li>coffee</li>
+        <li>tea</li>
+        <li>milk</li>
+    </ul>
+    <button id="add">add child</button>
+    <button id="rem">remove</button>
+    <script>
+        const para=document.getElementById("para")
+        const p=para.parentElement
+        console.log(p)
+        const perviousSiblings=para.previousElementSibling
+        console.log( perviousSiblings)
+        const list=document.getElementById("list")
+        const childrens=list.children
+        console.log(childrens)
+        console.log(list.firstElementChild)
+        console.log(list.lastElementChild)
+
+        const addButton=document.getElementById("add")
+        addButton.onclick=function(){
+            const newChild=document.createElement("li")
+            newChild.textContent="juice"
+            list.appendChild(newChild)
+        }
+        
+
+        const removeButton=document.getElementById("rem")
+        removeButton.onclick=function(){
+            list.lastElementChild.remove()
+        }
+
+
+
+    </script>
+</body>
+</html>
